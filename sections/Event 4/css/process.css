@@ -1,0 +1,61 @@
+.pdf{
+    height: 60vh;
+    width: 92vw;
+    /* display: flex; */
+    padding-top: 2vw;
+}
+
+.draft{
+    display: flex;
+}
+
+.planning{
+    height: 100%;
+
+}
+
+.planning img{
+    height: 100%;
+    width: auto;
+}
+
+h2{
+    font-family:  radikal black;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3vw;
+    margin: 4vw 0;
+}
+.heading{
+    width: 40vw;
+}
+
+.walk{
+    height: 60%;
+    width: auto;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 40% 40%;
+    grid-row-gap: 1%;
+    width: 100%;
+  }
+.grid-item {
+    font-size: 30px;
+    text-align: center;
+  }
+
+img{
+    height: 100%;
+  }
+
+.website{
+    display: unset;
+    margin-right: 2vw;
+}
+
+iframe{
+    width: 96%;
+    height: 100%;
+  }

@@ -1,0 +1,1490 @@
+@charset "UTF-8";
+
+@font-face{
+	font-family: Schrift;
+	src: url("../font/bahnschrift.ttf");
+}
+
+@font-face{
+	font-family: Pricedow;
+	src: url("../font/PRICEDOW.TTF");
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	display:block;
+	box-sizing: inherit;
+}
+
+html{
+	scroll-behavior:smooth;
+	font-size: 12px;
+	font-family: Schrift;
+	color: white;
+}
+
+body{
+	font-size: 1.6 rem;
+/*	background-color: yellow;*/
+	background-color: black;
+	
+}
+
+.outer-wraper{
+	position: absolute;
+	width: 100vh;
+	height: 100vw;
+	transform: rotate(-90deg) translateX(-100vh);
+	transform-origin: top left;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+
+.inner-wraper{
+	display: flex;
+	flex-direction: row;
+	width: 11520px;
+/*	sum of all section widths*/
+	transform: rotate(90deg) translateY(-100vh);
+	transform-origin: top left;
+}
+
+header{
+	background-color: black;
+	height: 100vh;
+	width: 1440px;
+	margin: 5px;
+}
+
+.nav_bar{
+	background-color: black;
+	position: fixed;
+	height: 30px;
+	width: 100vw;
+	padding-top: 5px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 200;
+	
+}
+.nav_links{
+	list-style: none;
+	font-family: Pricedow;
+	font-size: 24px;
+	color: white;
+/*	position: fixed;*/
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 0px 20px;
+}
+a{
+	text-decoration: none;
+	color: white;
+}
+
+
+.section{
+	height: 100vh;
+	width: 1440px;
+/*	background-color: blueviolet;*/
+	background-color: black;
+	display:flex;
+	position: relative;
+	margin: 5px;
+}
+
+
+.gta-series{
+	position: absolute;
+	box-sizing: content-box;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 250px;
+	width: 400px;
+	height: 400px;
+/*	background-color: blue;*/
+	z-index: 2;
+}
+.gta{
+	width: auto;
+	height: 100%;
+}
+
+h1{
+	text-transform: uppercase;
+	font-family: Schrift;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	font-size: 42px;
+/*	line-height : 40px;*/
+	font-kerning: -50px;
+	
+}
+h2{
+	text-transform: uppercase;
+	font-size: 24px;
+}
+.introduction{
+/*	background-color: cornflowerblue;*/
+	height: 300px;
+	width: 580px;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 800px;
+	z-index: 2;
+	
+}
+
+.trans-img-1{
+	
+	position: absolute;
+	height: 90vh;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 12%;
+	z-index: 1;
+}
+
+
+																/*SECTION ONE*/
+
+/*
+.one{
+	position: relative;
+}
+*/
+.gta1{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	right: -165px;
+	height: 410px;
+	width: 400px;
+/*	background-color: blue;*/
+	object-fit:cover;
+	z-index: 2
+}
+
+.gt1_1{
+	height: 300px;
+	width: 240px;
+	background-color: darkblue;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 300px;
+	left: 800px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/1/jah army/images.jpg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 80px;
+	text-transform: uppercase;
+	font-size: 80px;
+	
+	
+}
+
+.gt1_2{
+	height: 200px;
+	width: 300px;
+	background-color: darkblue;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 560px;
+	left: 620px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/1/catwright/HaroldCartwright-GTAL.png");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 70px;
+	text-transform: uppercase;
+	font-size: 75px;
+	
+}
+
+.gt1_3{
+	height: 200px;
+	width: 200px;
+	background-color: darkblue;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 175px;
+	left: 570px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/1/Sonetti/Cabot-GTA1.PNG.png");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 50px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gt1_4{
+	height: 160px;
+	width: 160px;
+	background-color: darkblue;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 370px;
+	left: 550px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/1/Unlce Fu/Fu.jpeg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 45px;
+	text-transform: uppercase;
+	font-size: 50px;
+	
+	
+}
+
+.content_1{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 400px;
+	width: 400px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 250px;
+	z-index: 2;
+
+}
+.cont_gt1_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+	
+}
+.cont_gt1_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt1_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt1_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+															/*SECTION TWO*/
+
+/*
+.two{
+	position: relative;
+}
+*/
+.gta2{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 400px;
+	left: 230px;
+	height: 350px;
+	width: 400px;
+}
+
+.gt2_1{
+	height: 200px;
+	width: 270px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 150px;
+	left: 900px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Hare krishna/Gouranga!_(GTA1).jpg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 64px;
+	text-transform: uppercase;
+	font-size: 64px;
+	
+	
+}
+.gt2_2{
+	height: 190px;
+	width: 220px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 150px;
+	left: 650px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Yakuza/Yakuza_gta2.jpg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 90px;
+	text-transform: uppercase;
+	font-size: 72px;
+}
+.gt2_3{
+	height: 190px;
+	width: 205px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 355px;
+	left: 750px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Russian mafia/RussianMafia-GTA2.PNG.png");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 58px;
+	text-transform: uppercase;
+	font-size: 62px;
+}
+.gt2_4{
+	height: 190px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 355px;
+	left: 540px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Rednecks/Rednecks-GTA2.PNG.png");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 60px;
+	text-transform: uppercase;
+	font-size: 54px;
+}
+.gt2_5{
+	height: 175px;
+	width: 180px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 350px;
+	right: 300px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Loonies/loonies.jpg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 80px;
+	text-transform: uppercase;
+	font-size: 64px;
+}
+.gt2_6{
+	height: 155px;
+	width: 175px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 535px;
+	right: 305px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Scientist/images.jpeg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 50px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gt2_7{
+	height: 135px;
+	width: 175px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 535px;
+	right: 500px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/2/Zaibatsu/maxresdefault.jpg");
+	background-size: contain;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 40px;
+	text-transform: uppercase;
+	font-size: 40px;
+}
+
+/*VIDEO*/
+.vid1{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 550px;
+	right: 50px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+
+/*FIRST SECTION CONTENT*/
+.content_2{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 400px;
+	width: 350px;
+	transform: translate(-50%,-50%);
+	top: 35vh;
+	left: 1225px;
+	z-index: 2;
+
+}
+.cont_gt2_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt2_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt2_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt2_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt2_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt2_6{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt2_7{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+/*TRANSITION IMAGE*/
+.trans-img-2{
+	
+	position: absolute;
+	height: 90vh;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 37.5%;
+	z-index: 1;
+}
+															/*SECTION 3*/
+
+
+.gt3_1{
+	height: 300px;
+	width: 300px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 480px;
+	left: 900px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/3/Colombian/ColombianCartel-GTA3-members.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 72px;
+	text-transform: uppercase;
+	font-size: 72px;
+}
+.gt3_2{
+	height: 260px;
+	width: 260px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 490px;
+	left: 600px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/3/forelli/Forellis-GTALCS-members.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 65px;
+	text-transform: uppercase;
+	font-size: 64px;
+}
+.gt3_3{
+	height: 220px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 230px;
+	left: 540px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/3/Leone crime/leone.jpeg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 64px;
+	text-transform: uppercase;
+	font-size: 64px;
+}
+.gt3_4{
+	height: 200px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 220px;
+	left: 950px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/3/Sindaco/PaulieSindacco-GTALCS.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 54px;
+	text-transform: uppercase;
+	font-size: 58px;
+}
+.gt3_5{
+	height: 190px;
+	width: 190px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 230px;
+	left: 750px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/3/Sicilian/sicilian.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 54px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gta3{
+	position:absolute;
+	transform: translate(-50%,-50%);
+	top: 500px;
+	right: 775px;
+	height: 400px;
+	width: 400px;
+	z-index: 2;
+}
+/*VIDEO*/
+.vid2{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 200px;
+	Left: 200px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+/*FIRST SECTION CONTENT*/
+.content_3{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 400px;
+	width: 350px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 1240px;
+	z-index: 2;
+
+}
+.cont_gt3_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt3_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt3_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt3_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt3_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+
+	
+																			/*Section 4*/
+/*
+.vice{
+	position: relative;
+}
+*/
+.gtvc_1{
+	height: 250px;
+	width: 260px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 350px;
+	left: 550px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/Vice/Cholos/cholos.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 72px;
+	text-transform: uppercase;
+	font-size: 80px;
+}
+
+.gtvc_2{
+	height: 220px;
+	width: 220px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 350px;
+	left: 820px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/cubans/Cubans.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 74px;
+	text-transform: uppercase;
+	font-size: 72px;
+}
+.gtvc_3{
+	height: 200px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 580px;
+	left: 500px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/Haitians/haitians.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 64px;
+	text-transform: uppercase;
+	font-size: 62px;
+}
+.gtvc_4{
+	height: 190px;
+	width: 190px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 580px;
+	left: 700px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/Mandez/mandez.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 60px;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.gtvc_5{
+	height: 180px;
+	width: 180px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 580px;
+	left: 890px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/Sharks/SharksVC2.JPG.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 54px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gtvc_6{
+	height: 170px;
+	width: 170px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 130px;
+	left: 500px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/Vercetti/vercetti.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 54px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gtvc_7{
+	height: 160px;
+	width: 160px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 150px;
+	right: 430px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/trailor/trailor.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 45px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gtvc_8{
+	height: 150px;
+	width: 150px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 140px;
+	right: 610px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/Vice/bikers/gta-vice-city-de-tekin-olmayan-yerler_1465442.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gtavc{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 300px;
+	left: 1200px;
+	height: 400px;
+	width: 400px;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 54px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+
+/*VIDEO*/
+.vid3{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 555px;
+	right: 105px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+/*FIRST SECTION CONTENT*/
+.content_4{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 400px;
+	width: 350px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 200px;
+	z-index: 2;
+
+}
+.cont_gt4_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt4_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_6{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_7{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt4_8{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+
+.trans-img-3{
+	
+	position: absolute;
+	height: 100vh;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+}
+
+																			/*Section 5*/
+
+.gtsa_1{
+	height: 260px;
+	width: 260px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 325px;
+	left: 510px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/San/Ballas/screen.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 86px;
+	text-transform: uppercase;
+	font-size: 86px;
+}
+
+.gtsa_2{
+	height: 240px;
+	width: 240px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 545px;
+	left: 780px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/San/groove/GROVESTREETFAMILIES.JPG.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 72px;
+	text-transform: uppercase;
+	font-size: 72px;
+}
+.gtsa_3{
+	height: 210px;
+	width: 220px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 315px;
+	left: 760px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/San/loco syndica/2-gtasa02.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 60px;
+	text-transform: uppercase;
+	font-size: 60px;
+}
+.gtsa_4{
+	height: 200px;
+	width: 240px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 560px;
+	left: 500px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/San/Lo Santos/Vagos346.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 56px;
+	text-transform: uppercase;
+	font-size: 56px;
+}
+.gtsa_5{
+	height: 160px;
+	width: 180px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 120px;
+	left: 740px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/San/San fierro/SanFierroTriads-GTASA-members3.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gtsa_6{
+	height: 150px;
+	width: 160px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 110px;
+	left: 550px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/San/varrios los/Varrios_Los_Aztecas_(SA).jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 32px;
+	text-transform: uppercase;
+	font-size: 32px;
+}
+.gtasa{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 250px;
+	left: 1200px;
+	height: 310px;
+	width: 400px;
+	z-index: 2;
+}
+
+/*VIDEO*/
+.vid4{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 510px;
+	right: 115px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+
+/*FIRST SECTION CONTENT*/
+.content_5{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 580px;
+	width: 350px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 200px;
+	z-index: 2;
+
+}
+.cont_gt5_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt5_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt5_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt5_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt5_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt5_6{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+
+														/*SECTION 6*/
+.gt4_1{
+	height: 250px;
+	width: 250px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 560px;
+	left: 550px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/4/angels of death/AngelsOfDeath-GTAIV-members.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 72px;
+	text-transform: uppercase;
+	font-size: 72px;
+}
+
+.gt4_2{
+	height: 220px;
+	width: 220px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	left: 540px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/lost mc/This_Shit's_Crused_1.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 62px;
+	text-transform: uppercase;
+	font-size: 62px;
+}
+.gt4_3{
+	height: 200px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	left: 770px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/northwood/Grupo_NDDD.png");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 50px;
+	text-transform: uppercase;
+	font-size: 50px;
+}
+.gt4_4{
+	height: 190px;
+	width: 190px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 580px;
+	left: 780px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/mcREARY/mcrear.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 56px;
+	text-transform: uppercase;
+	font-size: 56px;
+}
+.gt4_5{
+	height: 180px;
+	width: 180px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 580px;
+	left: 970px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/uptown/ArmWrestling-TLAD-UptownRidersClubhouse2.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 52px;
+	text-transform: uppercase;
+	font-size: 52px;
+}
+.gt4_6{
+	height: 170px;
+	width: 170px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 120px;
+	left: 505px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/pentrovic/KennyPetrovic-GTAIV.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 46px;
+	text-transform: uppercase;
+	font-size: 46px;
+}
+.gt4_7{
+	height: 170px;
+	width: 170px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 120px;
+	left: 700px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/4/yardies/LittleJacob-GTAIV-Closeup.png");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gta4{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 300px;
+	left: 1200px;
+	height: 400px;
+	width: 400px;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+
+/*VIDEO*/
+.vid5{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 580px;
+	right: 75px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+/*7 SECTION CONTENT*/
+.content_6{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 580px;
+	width: 350px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 200px;
+	z-index: 2;
+
+}
+.cont_gt6_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt6_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt6_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt6_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt6_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt6_6{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt6_7{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+
+
+.trans-img-4{
+	
+	position: absolute;
+	height: 100vh;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 63%;
+	z-index: 1;
+}
+
+																		/*SECTION 7*/
+.gt5_1{
+	height: 250px;
+	width: 250px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 550px;
+	left: 550px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%),url("../images/gangs/5/ballas/921dbb-20160503230022_1.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 80px;
+	text-transform: uppercase;
+	font-size: 80px;
+}
+
+.gt5_2{
+	height: 220px;
+	width: 220px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 535px;
+	left: 800px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/families/CF5dQmtWoAAAA8H.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 64px;
+	text-transform: uppercase;
+	font-size: 64px;
+}
+.gt5_3{
+	height: 200px;
+	width: 200px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	left: 525px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/lost mc/ClaySimons-GTAV.png");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 56px;
+	text-transform: uppercase;
+	font-size: 56px;
+}
+.gt5_4{
+	height: 190px;
+	width: 190px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	left: 730px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/madrazo/MadrazoCartelMembers-GTAO-SS2.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 56px;
+	text-transform: uppercase;
+	font-size: 56px;
+}
+.gt5_5{
+	height: 180px;
+	width: 180px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 320px;
+	left: 920px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/motocyle clubs/gta_online_bikers_1.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gt5_6{
+	height: 170px;
+	width: 170px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 130px;
+	left: 700px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/o'niel bros/freres-oneil.jpg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 42px;
+	text-transform: uppercase;
+	font-size: 42px;
+}
+.gt5_7{
+	height: 170px;
+	width: 170px;
+	background-color: hotpink;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 130px;
+	left: 880px;
+	background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%), url("../images/gangs/5/the proffessioonals/download.jpeg");
+	background-size: cover;
+	z-index: 2;
+	font-variation-settings: "wdth" 75, "wght" 600;
+	line-height: 30px;
+	text-transform: uppercase;
+	font-size: 30px;
+}
+.gta5{
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 300px;
+	left: 1300px;
+	height: 365px;
+	width: 400px;
+	z-index: 2;
+}
+
+/*VIDEO*/
+.vid6{
+	height: 140px;
+	width: 140px;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 580px;
+	right: 75px;
+	background-color: yellow;
+	overflow: hidden;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+/*8 SECTION CONTENT*/
+.content_7{
+	position: absolute;
+/*	background-color: orange;*/
+	height: 580px;
+	width: 370px;
+	transform: translate(-50%,-50%);
+	top: 50vh;
+	left: 215px;
+	z-index: 2;
+
+}
+.cont_gt7_1{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+/*	opacity: 0%;*/
+}
+.cont_gt7_2{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt7_3{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt7_4{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt7_5{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt7_6{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+.cont_gt7_7{
+	position: absolute;
+	transform: translate(0%,-50%);
+	top: 50%;
+	opacity: 0%;
+}
+
+
+
+/*Scroll Indicator*/
+
+.scrll_ind{
+	position: fixed;
+	bottom: 4vh;
+	z-index: 50;
+	width: 100%;
+/*	background-color: #f1f1f1;*/
+	height: 50px;
+}
+
+.progress-container {
+	width: 50%;
+	height: 8px;
+	background: #808080;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+
+}
+.progress-bar {
+  height: 8px;
+  background-color: blueviolet;
+  width: 5%;
+}
+
+
+
+
+
