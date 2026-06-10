@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
+  ArrowSquareOut,
   ChartLineUp,
   Compass,
   Cpu,
@@ -16,7 +17,12 @@ import {
   X,
 } from "@phosphor-icons/react";
 import BlueprintScene from "./components/BlueprintScene.jsx";
-import { archetypes, profile, tableOfContents } from "./data/portfolioData.js";
+import {
+  archetypes,
+  profile,
+  projectCaseStudies,
+  tableOfContents,
+} from "./data/portfolioData.js";
 
 const iconMap = {
   chart: ChartLineUp,
@@ -38,9 +44,21 @@ function getInitialArchetypeId() {
   }
 
   const idFromHash = window.location.hash.replace("#", "");
-  return archetypes.some((archetype) => archetype.id === idFromHash)
-    ? idFromHash
-    : archetypes[0].id;
+  return isArchetypeId(idFromHash) ? idFromHash : archetypes[0].id;
+}
+
+function isArchetypeId(id) {
+  return archetypes.some((archetype) => archetype.id === id);
+}
+
+function scrollToSectionHash(id) {
+  if (!id || isArchetypeId(id)) {
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    document.getElementById(id)?.scrollIntoView({ block: "start" });
+  });
 }
 
 function Icon({ name, size = 28 }) {
@@ -233,34 +251,106 @@ function LensNarrative({ active }) {
   );
 }
 
-function CaseStudies({ active }) {
+function CaseStudies() {
+  const [selectedProjectId, setSelectedProjectId] = useState(projectCaseStudies[0].id);
+  const selectedProject =
+    projectCaseStudies.find((project) => project.id === selectedProjectId) ??
+    projectCaseStudies[0];
+
   return (
     <section className="case-studies" id="case-studies" aria-labelledby="case-studies-heading">
       <div className="section-heading">
         <div>
-          <p className="section-index">03 - Case Studies</p>
-          <h2 id="case-studies-heading">Case Studies</h2>
+          <p className="section-index">03 - Project Archive</p>
+          <h2 id="case-studies-heading">Product Case Studies</h2>
         </div>
         <p>
-          Selected work slots that can be replaced with real projects, source links,
-          process notes, and outcomes.
+          Five product projects from the Figma portfolio archive, now incorporated
+          into the live website as reusable case-study content.
         </p>
-        <a href="#contact" className="text-link">
-          Add case studies <ArrowRight size={18} aria-hidden="true" />
+        <a
+          href={selectedProject.sourceUrl}
+          className="text-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open source frame <ArrowSquareOut size={18} aria-hidden="true" />
         </a>
       </div>
 
-      <div className="evidence-grid">
-        {active.evidence.map((item) => (
-          <article className="evidence-card" key={`${active.id}-${item.number}`}>
-            <div className="card-head">
-              <span>{item.number}</span>
-              <strong>{item.title}</strong>
+      <div className="project-showcase">
+        <article className="project-feature" key={selectedProject.id}>
+          <div className="project-media" data-project={selectedProject.id}>
+            <img src={selectedProject.image} alt={selectedProject.imageAlt} />
+            {selectedProject.secondaryImage ? (
+              <img
+                className="project-secondary-image"
+                src={selectedProject.secondaryImage}
+                alt=""
+                aria-hidden="true"
+              />
+            ) : null}
+          </div>
+          <div className="project-feature-copy">
+            <div className="project-kicker">
+              <span>{selectedProject.number}</span>
+              <span>{selectedProject.platform}</span>
             </div>
-            <div className="card-illustration" aria-hidden="true">
-              <Icon name={item.icon} size={46} />
+            <h3>{selectedProject.title}</h3>
+            <p className="project-summary">{selectedProject.summary}</p>
+            <dl className="project-facts">
+              <div>
+                <dt>Status</dt>
+                <dd>{selectedProject.status}</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>{selectedProject.role}</dd>
+              </div>
+              <div>
+                <dt>Organisation</dt>
+                <dd>{selectedProject.organization}</dd>
+              </div>
+            </dl>
+            <p>{selectedProject.impact}</p>
+            <ul className="project-tags" aria-label={`${selectedProject.title} tags`}>
+              {selectedProject.tags.map((tag) => (
+                <li key={`${selectedProject.id}-${tag}`}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+
+        <div className="project-index" role="list" aria-label="Select a project case study">
+          {projectCaseStudies.map((project) => {
+            const selected = project.id === selectedProject.id;
+
+            return (
+              <button
+                className={`project-index-row ${selected ? "is-selected" : ""}`}
+                key={project.id}
+                type="button"
+                aria-pressed={selected}
+                onClick={() => setSelectedProjectId(project.id)}
+              >
+                <span>{project.number}</span>
+                <strong>{project.title}</strong>
+                <small>{project.status}</small>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="project-mini-grid" aria-label="Project overview cards">
+        {projectCaseStudies.map((project) => (
+          <article className="project-mini-card" key={`${project.id}-mini`}>
+            <img src={project.image} alt="" aria-hidden="true" />
+            <div>
+              <span>{project.number}</span>
+              <h3>{project.title}</h3>
+              <p>{project.platform}</p>
             </div>
-            <p>{item.detail}</p>
           </article>
         ))}
       </div>
@@ -415,11 +505,14 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const idFromHash = window.location.hash.replace("#", "");
-      if (archetypes.some((archetype) => archetype.id === idFromHash)) {
+      if (isArchetypeId(idFromHash)) {
         setActiveId(idFromHash);
+      } else {
+        scrollToSectionHash(idFromHash);
       }
     };
 
+    scrollToSectionHash(window.location.hash.replace("#", ""));
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
@@ -437,7 +530,7 @@ export default function App() {
         <TableOfContents activeId={activeId} />
         <main className="content-shell">
           <Hero active={active} activeId={activeId} onSelect={handleSelectArchetype} />
-          <CaseStudies active={active} />
+          <CaseStudies />
           <LensNarrative active={active} />
           <EvidenceTimeline active={active} />
           <SkillsSection active={active} />

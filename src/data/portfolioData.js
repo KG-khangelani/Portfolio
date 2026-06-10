@@ -7,9 +7,9 @@ export const profile = {
   introduction:
     "This portfolio adapts to the lens you choose. Each mode reframes the same editable source of truth around the work, thinking, and evidence that matters to a specific audience.",
   usage:
-    "Use the Active Lens panel to explore different perspectives. Replace these draft entries with current career facts, links, projects, and proof when ready.",
+    "Use the Active Lens panel to explore different perspectives. The project archive below now pulls from the Figma portfolio case studies.",
   dataStatus:
-    "Current details pending. The outdated 2020 portfolio is preserved as archive material and is not used as a source for current claims.",
+    "Project details are drafted from the Figma portfolio archive. Contact details and any sensitive project links still need final review.",
   locationLabel: "[Add current location]",
   contactLabel: "[Add current email or booking link]",
 };
@@ -50,6 +50,102 @@ export const tableOfContents = [
     number: "05",
     label: "Contact",
     items: ["Get in touch", "Links"],
+  },
+];
+
+export const projectCaseStudies = [
+  {
+    id: "idiyprop",
+    number: "01",
+    title: "Idiyprop",
+    platform: "Rental management MVP",
+    status: "Prototype phase",
+    role: "Product design and prototyping",
+    organization: "Personal development project",
+    image: "/projects/idiyprop-overview.webp",
+    imageAlt:
+      "Idiyprop case-study frame showing rental-management mobile screens and project notes.",
+    summary:
+      "A minimum usable product for homeowners managing the admin workflow of leasing residential properties.",
+    impact:
+      "The development cycle ended in prototype phase and now serves as a personal product-development project.",
+    tags: ["Mobile app", "Property tech", "Prototype"],
+    sourceUrl:
+      "https://www.figma.com/design/R0bnSUyLlAXdjL4LohcMhC/Khangelani-Overview-Portfolio?node-id=1173-3002",
+  },
+  {
+    id: "forcelink-mobile",
+    number: "02",
+    title: "Forcelink Mobile",
+    platform: "Field service mobile app",
+    status: "Live",
+    role: "UX/UI Design",
+    organization: "Forcelink",
+    image: "/projects/forcelink-mobile-home.webp",
+    imageAlt: "Forcelink mobile home screen with field-service modules.",
+    summary:
+      "A field-service management mobile experience used to support configurable workflows across multiple industries.",
+    impact:
+      "Designed mobile workflows for teams coordinating work orders, assets, support calls, resources, and field operations.",
+    tags: ["Mobile app", "Field service", "UX/UI"],
+    sourceUrl:
+      "https://www.figma.com/design/R0bnSUyLlAXdjL4LohcMhC/Khangelani-Overview-Portfolio?node-id=1210-3172",
+  },
+  {
+    id: "forcelink-web",
+    number: "03",
+    title: "Forcelink Web",
+    platform: "Field service web platform",
+    status: "Live",
+    role: "Lead UX/UI Designer, Junior Developer",
+    organization: "www.forcelink.net",
+    image: "/projects/forcelink-web-board.webp",
+    imageAlt: "Forcelink web application screen displayed inside a browser frame.",
+    summary:
+      "A web platform for configurable field-service operations, work orders, resources, assets, and operational reporting.",
+    impact:
+      "Combined product design and junior development support while working full time on live Forcelink product surfaces.",
+    tags: ["Web app", "Enterprise workflows", "Design systems"],
+    sourceUrl:
+      "https://www.figma.com/design/R0bnSUyLlAXdjL4LohcMhC/Khangelani-Overview-Portfolio?node-id=1210-4164",
+  },
+  {
+    id: "mysmartcity",
+    number: "04",
+    title: "MySmartCity",
+    platform: "Citizen services platform",
+    status: "Live",
+    role: "SEO and conversion contribution",
+    organization: "www.mysmart.city",
+    image: "/projects/mysmartcity-home.webp",
+    imageAlt: "MySmartCity landing page with city service reporting and booking actions.",
+    summary:
+      "SEO optimization and user-conversion work for a citizen platform connecting residents with city services.",
+    impact:
+      "Contributed to the product for a short period, with partial ongoing involvement while another designer owns the portfolio lead.",
+    tags: ["Web platform", "Conversion", "Civic tech"],
+    sourceUrl:
+      "https://www.figma.com/design/R0bnSUyLlAXdjL4LohcMhC/Khangelani-Overview-Portfolio?node-id=1223-3594",
+  },
+  {
+    id: "planter-app",
+    number: "05",
+    title: "Planter App",
+    platform: "Variable-rate planting app",
+    status: "Live",
+    role: "UX/UI Design",
+    organization: "www.perfectprecision.co.za",
+    image: "/projects/planter-main.webp",
+    secondaryImage: "/projects/planter-phone.webp",
+    imageAlt:
+      "Planter App tablet interface showing skips, population, seed count, target population, alerts, and row mapping.",
+    summary:
+      "A software solution replacing counter-intuitive variable-rate planting application workflows.",
+    impact:
+      "Designed a clearer operational interface for scalable, current software practices in precision agriculture.",
+    tags: ["Tablet app", "Agritech", "Operational UI"],
+    sourceUrl:
+      "https://www.figma.com/design/R0bnSUyLlAXdjL4LohcMhC/Khangelani-Overview-Portfolio?node-id=1227-3985",
   },
 ];
 
