@@ -1,0 +1,248 @@
+@font-face{
+    font-family: radikal;
+    src: url(../fonts/Nootype\ -\ Radikal.otf);
+}
+
+@font-face{
+    font-family: radikal black;
+    src: url(../fonts/Nootype\ -\ Radikal\ Black\ Italic.otf);
+}
+
+@font-face{
+    font-family: play-italic;
+    src: url(../fonts/PlayfairDisplay-Italic.ttf);
+}
+
+@font-face{
+    font-family: bold-italic;
+    src: url(../fonts/PlayfairDisplay-SemiBoldItalic.ttf);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: radikal;
+    color: #116872;
+}
+
+.html{
+    background-color: black;
+}
+
+body{
+    width: 96vw;
+    height: 96vh;
+    margin: 2%;
+    background-color: #FDE5D0;
+}
+
+img{
+    width: 100%;
+}
+
+/* /////////////////////////////////// */
+
+
+
+.navbar{
+    position: fixed;
+    height: 96vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 100;
+    /* background-color: tomato; */
+    top: 2vw;
+    right: 2vw;
+
+    
+}
+
+.active{
+    display: none;
+}
+
+.navbar .icon{
+    width: auto;
+    height: 2.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.navbar .icon img{
+    height: 100%;
+    width: auto;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    /* background-color: yellowgreen; */
+    transition: all .08s ease-out;
+}
+
+.link-text{
+    /* font-family: play-italic; */
+    font-size: 2vw;
+    font-style: italic;
+    text-transform: uppercase;
+    display: none;
+    margin-right: 1vw;
+    /* color: #116872; */
+    transition: all 1s ease-in-out;
+}
+
+.nav-link:hover{
+    height: 3vw;
+}
+
+.nav-link:hover .link-text{
+    display: block;
+}
+
+.link-text:hover{
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 600px){
+    .navbar{
+        top: 3vw;
+        width: 100vw;
+        height: 4vw;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .navbar .icon{
+        height: 4vw;
+        margin-left: 0.5vw;
+    }
+
+    .nav-link{
+        width: auto;
+        justify-content: center;
+        flex-direction: column-reverse;
+    }
+
+    .link-text{
+        margin-top: .1vw;
+        width: auto;
+    }
+
+}
+
+
+/* /////////////////////////////////// */
+
+
+.home-button{
+    width: 8vw;
+ 
+}
+
+.introduction{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.introduction h1{
+    font-family: radikal black;
+    font-style: italic;
+    font-size: 5vw;
+    text-transform: uppercase;
+    height: fit-content;
+    width: fit-content;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 2vh;
+    margin-right: -2vw;
+}
+
+.italic-type{
+    font-family: bold-italic;
+    font-style: italic;
+    font-size: 5vw;
+    text-transform: uppercase;
+    height: fit-content;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-bottom: 2vh;
+}
+
+.shape{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 46vw;
+    /* width: 70vw; */
+}
+
+
+
+.content{
+    width: 28vw;
+    z-index: 3;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    left: 78%;
+    font-size: 1vw;
+}
+
+p:first-child:first-letter{
+    font-size: 4vw;
+    padding-right: .5vw;
+    margin-bottom: -1vw;
+    float: left;
+    line-height: 1.2;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .shape{
+        width: 70vw;
+        top: 45%;
+        
+    }
+    .content{
+        font-size: 1.5vw;
+        top: 75%;
+    }
+}
+
+.element{
+    width: 8vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 25vh;
+    left: 25vw;
+    z-index: 3;
+}
+
+.process a{
+    text-decoration: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 98vh;
+    right: 0%;
+    font-family: radikal black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-style: italic;
+    font-size: 2vw;
+    
+}
+
+.process:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+    font-style: normal;
+}

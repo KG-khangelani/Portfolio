@@ -1,0 +1,196 @@
+
+.link-text{
+    display: none;
+}
+
+section{
+    height: 96vh;
+    width: 92vw;
+    display: flex;
+}
+
+.words{
+    padding-top: 8vw;
+    width: 40vw;
+    height: 50%;
+    background-color: #116872;
+    margin-top: 20vh;
+    border-width: 1vw;
+}
+
+.words li{
+    color: white;
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2vw;
+    letter-spacing: 1vw;
+}
+
+.picking-process{
+    width: 50vw;
+}
+
+embed{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: center;
+    margin-top: 20vh;
+
+}
+
+.paragraph{
+    
+    margin: 3vw 4vw;
+    font-size: 1vw;
+}
+
+ol li{
+    margin-top: 0.8vh;
+}
+
+.big{
+    font-family: play-italic;
+    font-style: italic;
+    font-size: 3.2vw;
+    margin: 6vw 8vw;
+    text-align: center;
+}
+
+.step-2{
+    background-color: #116872;
+    margin-top: 5vh;
+
+}
+
+img{
+    height: 100%;
+    width: auto;
+
+}
+
+.scamp{
+    width: 50vw;
+}
+
+.step-2 .scamp h3{
+    font-size: 3vw;
+    position: relative;
+    top: 40%;
+    left: 20%;
+    font-style: italic;
+    color: #FDE5D0;
+}
+
+.step-2 .paragraph{
+    color: #FDE5D0;
+    position: relative;
+    top: 40%;
+    left: 16%;
+    width: 40%;
+}
+
+.sketch{
+    height: 90%;
+    
+    border: #fde5d07e;
+    margin-top: 4vh;
+    border-width: 1vw;
+    border-style: solid;
+}
+
+.step-3{
+    align-content: space-around;
+    justify-content: flex-end;
+}
+
+.design{
+    height: 90%;
+    border: #1168722c;
+    margin-top: 4vh;
+    border-width: 1vw;
+    border-style: solid;
+}
+
+.step-3 .scamp h3{
+    font-size: 3vw;
+    position: relative;
+    top: 40%;
+    right: 20%;
+    font-style: italic;
+    text-align: end;
+}
+
+@media only screen and (max-width: 600px){
+    section{
+        flex-direction: column;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    .words{
+        width: 100%;
+        display: none;
+    }
+
+    .picking-process{
+        width: 100%;
+
+    }
+    .paragraph{
+        font-size: 2vw;
+    }
+
+    h1{
+        font-size: 6vw;
+        margin: 10vw 0 5vw;
+    }
+
+    .h3{
+        font-size: 15vw;
+    }
+
+    .step-1{
+        height: 50vh;
+    }
+
+    .step-2 .scamp {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-top: 10vw;
+    }
+    .scamp .paragraph{
+        margin: 0 10vw;
+    }
+
+    .sketch{
+        height: auto;
+        /* width: auto; */
+        justify-content: center;
+        margin: 5vw 16vw;
+    }
+
+    .step-3{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .step-3 .scamp{
+        margin: 5vw 15vw;
+        /* height: auto; */
+    }
+
+    .design{
+        height: auto;
+    }
+
+}

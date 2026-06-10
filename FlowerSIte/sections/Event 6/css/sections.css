@@ -1,0 +1,30 @@
+.pdf{
+    height: 90vh;
+    width: 92vw;
+    display: flex;
+}
+
+iframe{
+    /* height: 86%; */
+    margin: 2%;
+    margin-top: 10vw;
+    width: 96%;
+    /* overflow: hidden; */
+}
+
+h2{
+    font-size: 5vw;
+    margin: 5vw 0;
+}
+.heading{
+    width: 20vw;
+}
+
+.walk{
+    height: 60%;
+    width: auto;
+}
+
+.videos{
+    display: flex;
+}

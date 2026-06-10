@@ -1,0 +1,53 @@
+.heading{
+    width: 30vw;
+}
+
+.pdf{
+    background-color: #116872;
+}
+.ar{
+    margin: 2vw 0 2vw 0;
+}
+.pdf h1{
+    margin-right: 8vw;
+    color: white;
+    
+}
+
+
+.cont{
+    background-color: rgba(17, 104, 114, 0.2);
+    color: white;
+    height: 16vw;
+    width: 25vw;
+    margin: 1vw;
+    padding: 3vw 1vw;
+}
+
+p{
+    line-height: 1vw;
+    padding: 0 2vw;
+    word-spacing: 0.2vw;
+    font-size: 1vw;
+}
+
+.brief{
+    align-self: center;
+}
+
+.solution{
+    align-self: flex-end;
+}
+
+.cont h1{
+    margin: 0 0 1vw 0;
+}
+
+.rationale h1{
+    font-size: 2.5vw;
+    
+}
+
+section{
+    height: 50vh;
+}

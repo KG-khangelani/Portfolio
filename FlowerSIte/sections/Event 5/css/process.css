@@ -1,0 +1,323 @@
+@font-face{
+    font-family: bold-italic;
+    src: url(/fonts/PlayfairDisplay-SemiBoldItalic.ttf);
+}
+
+.pdf{
+    height: 80%;
+    width: 92vw;
+    margin-bottom: 8vw;
+}
+
+h1{
+    font-family:  radikal black;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3vw;
+    padding: 2vw 0;
+    display: block;
+}
+
+h2{
+    font-size: 5vw;
+    margin: 5vw 0;
+}
+
+.grid-container {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-gap: 1px;
+
+  }
+  
+.grid-item {
+    padding: 2vw;
+    font-size: 1vw;
+    text-align: left;
+    /* background-color: thistle; */
+  }
+
+.item1{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    z-index: 3;
+}
+
+.item1 p{
+    width: 70%;
+    font-size: 1vw;
+    line-height: 1.5vw;
+}
+
+.item3{
+    grid-row: 1 / span 2;
+
+}
+
+.item2{
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    z-index: 3;
+    
+}
+
+.item3{
+    width: 9vw;
+}
+
+.item4{
+    grid-row: 1 / span 2;
+    width: 30vw;
+    background-image: url(../media/SVG/mock1@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0;
+}
+
+.item5{
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    z-index: 1;
+    /* background-color: #116872; */
+    opacity: 0.2;
+    max-width: 36vw;
+}
+
+.item6{
+    grid-column: 2 / span 1;
+    grid-row: 2;
+    z-index: 1;
+    /* background-color: #116872; */
+    opacity: 0.2;
+    max-width: 36vw;
+}
+
+.item2 h1{
+    padding-left: 53%;
+    width: 40%;
+}
+
+.item2 ul{
+    width: 70%;
+    padding-left: 56%;
+    font-size: 1vw;
+}
+
+img{
+    width: 100%;
+}
+
+.journey{
+    height: 7vw;
+    margin: 6vw 3vw;
+    background-image: url(../media/SVG/journey@2x.png);
+    background-repeat: no-repeat;
+    opacity: 0.4;
+}
+
+
+                                /* Logo Design */
+.logo-design{
+    height: 100vh;
+}
+
+.logo-design h1{
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 3vw;
+    padding: 2vw 0;
+    display: block;
+}
+
+.logo-design .grid-item{
+    padding: 1vw 2vw;
+}
+.box1{
+    grid-column: 1 / span 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2{
+    grid-column: 1 / span 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box3{
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box4{
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    width: .6vw;
+    background-color: #116872;
+}
+
+.logo{
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 18vw;
+    height: 18vw;
+}
+
+.box3 .logo{
+    width: 34vw;
+    height: 34vw;
+}
+.logo img{
+    width: 70%;
+}
+
+.box1, .box2, .box3 p{
+    width: 70%;
+    font-size: 1vw;
+    line-height: 1.5vw;
+}
+
+h3{
+    font-family: bold-italic; 
+    align-self: flex-start;
+    margin: 4% 20%;
+    /* fix this ASAP */
+}
+
+
+                            /* Look and feel */
+
+.feel{
+    display: flex;
+    margin-top: 30vw;
+}
+
+.title{
+    display: block;
+    width: 6vw;
+    padding-left: 2vw;
+    background-color: rgba(17, 104, 114, 0.2);
+}
+
+.fonts{
+    padding-left: 20%;
+}
+
+.col, .fon{
+    margin-top: 8vw;
+}
+
+                            /* icons */
+
+.icon-develop{
+    display: flex;
+    align-items: center;
+}       
+
+.icon-title{
+    margin-left: 10vw;
+}
+.icon-assets{
+    background-image: url(../media/SVG/icons@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40vw;
+    height: 15vw;
+    margin-left: 16vw;
+}
+
+.con{
+    height: 50vh;
+}
+
+                        /* Onboarding */
+
+.onboarding{
+    background-image: url(../media/SVG/onboarding.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin-left: 6vw;
+}
+
+                        /* app layout */
+
+.layout .grid-container{
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 70% auto;
+}
+.grid-item{
+    /* background-color: skyblue; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.spot1{
+    background-image: url(../media/SVG/home@2x.png);
+}
+
+.spot2{
+    background-image: url(../media/SVG/settings@2x.png);
+}
+
+.spot3{
+    background-image: url(../media/SVG/profile@2x.png);
+}
+
+.spot4{
+    background-image: url(../media/SVG/notifications@2x.png);
+    
+}
+
+                        /* Overview */
+
+.overview{
+    background-image: url(../media/SVG/overview@2x.png);
+    background-repeat: repeat;
+    height: 100%;
+}
+
+                        /* Mockup */
+
+.block{
+    grid-template-columns: auto auto auto;
+}
+
+.block1{
+    background-image: url(../media/SVG/mock1.png);
+    background-size: cover;
+}
+.block2{
+    background-image: url(../media/SVG/mock2.png);
+    background-size: cover;
+}
+.block3{
+    background-image: url(../media/SVG/mock3.png);
+    background-size: cover;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+}

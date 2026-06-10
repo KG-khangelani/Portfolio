@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    /* display: flexbox; */
+    scroll-behavior: smooth;
+    color: white;
+}
+
+
+                            /* Development Section */
+.development{
+    background-color: hotpink;
+    color: gold;
+    display: flex;
+    font-family: radikal black;
+    text-transform: uppercase;
+    /* width: 94vw; */
+}
+@media only screen and (max-width:900px) {
+	.development {
+        flex-direction: column;
+        
+    }
+    
+}
+.heading2{
+    position: absolute;
+    transform: translate(-50%, 0);
+    left: 50%;
+    width: 80vw;
+    text-align: center;
+    margin-top: 4vh;
+    font-family: radikal black;
+    text-transform: uppercase;
+    font-size: 5vw;
+    z-index: 2;
+
+}
+
+.character{
+    position: relative;
+    background-image: url("../media/Character.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 20%;
+    flex-grow: 1;
+
+}
+
+
+.story{
+    position: relative;
+    background-image: url("../media/environment.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 20%;
+    flex-grow: 1;
+
+}
+
+.environment{
+    position: relative;
+    background-image: url("../media/environment.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 20%;
+    flex-grow: 1;
+
+}
+
+.box-head{
+    position: relative;
+    top: 80%;
+    font-size: 4vw;
+    font-weight: bold;
+    margin-left: 2rem;
+
+}
+
+.cmore{
+    font-size: 20px;
+    position: relative;
+    top: 80%;
+    margin-left: 2rem;
+}
+
+
+
+
+@media only screen and (max-width:900px) {
+    
+
+    h1{
+        padding-top: 16rem;
+    }
+
+    h2{
+        padding-top: 20rem;
+        font-size: 72px;
+        text-align: center;
+        
+    
+    }
+    
+    .box-head{
+        font-size: 12vw;
+        
+    }
+
+    .cmore{
+        position: inherit;
+        top: 80%;
+    }
+
+    
+
+    .character {
+        height: 80vh;
+        width: 100vw;
+
+        
+    }
+    
+    .story {
+        height: 80rem;
+        width: 100vw;
+        
+    }
+
+    .heading2{
+        margin-top: 2.5vh;
+        font-size: 8vw;
+        width: 100vw;
+        text-align: center;
+    }
+}
