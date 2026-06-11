@@ -16,6 +16,8 @@ import {
   TreeStructure,
   X,
 } from "@phosphor-icons/react";
+import { MockFrame } from "react-mockframe";
+import "react-mockframe/styles/mockframe.css";
 import BlueprintScene from "./components/BlueprintScene.jsx";
 import {
   archetypes,
@@ -39,7 +41,7 @@ const iconMap = {
 };
 
 const projectById = new Map(projectCaseStudies.map((project) => [project.id, project]));
-const renderRevision = "mockup-fix-2026-06-11-browser-chrome";
+const renderRevision = "mockframe-2026-06-11";
 
 function getRecommendedProjects(active) {
   const recommendedIds = active.projectIds?.length
@@ -266,34 +268,34 @@ function LensNarrative({ active }) {
 
 function PhoneMockup({ src, alt = "", featured = false }) {
   return (
-    <div className={`phone-mockup ${featured ? "is-featured" : ""}`}>
-      <span className="phone-notch" aria-hidden="true" />
-      <span className="phone-speaker" aria-hidden="true" />
-      <img src={src} alt={alt} />
+    <div className={`phone-mockup-shell ${featured ? "is-featured" : ""}`}>
+      <MockFrame device="iPhone 17" color={featured ? "black" : "deep-blue"} hideNotch>
+        <img className="mockframe-screen-image" src={src} alt={alt} />
+      </MockFrame>
     </div>
   );
 }
 
 function BrowserMockup({ src, alt, url }) {
   return (
-    <div className="browser-mockup">
-      <div className="browser-toolbar" aria-hidden="true">
-        <span className="browser-lights">
-          <span />
-          <span />
-          <span />
-        </span>
-        <span className="browser-url">
-          <span className="browser-secure-dot" />
-          <span>{url}</span>
-        </span>
-        <span className="browser-actions">
-          <span />
-          <span />
-        </span>
-      </div>
-      <div className="browser-viewport">
-        <img src={src} alt={alt} />
+    <div className="browser-mockup" data-url={url}>
+      <div className="mockframe-scale-stage">
+        <MockFrame device="MacBook Pro" color="space-gray" hideNotch>
+          <div className="mockframe-browser-content">
+            <div className="mockframe-browser-bar" aria-hidden="true">
+              <span className="browser-lights">
+                <span />
+                <span />
+                <span />
+              </span>
+              <span className="browser-url">
+                <span className="browser-secure-dot" />
+                <span>{url}</span>
+              </span>
+            </div>
+            <img className="mockframe-screen-image" src={src} alt={alt} />
+          </div>
+        </MockFrame>
       </div>
     </div>
   );
@@ -301,11 +303,10 @@ function BrowserMockup({ src, alt, url }) {
 
 function TabletMockup({ src, alt }) {
   return (
-    <div className="tablet-pair">
-      <div className="tablet-mockup">
-        <span className="tablet-camera" aria-hidden="true" />
-        <img src={src} alt={alt} />
-      </div>
+    <div className="tablet-mockup-shell">
+      <MockFrame device="iPad Pro" color="space-gray" landscape hideNotch>
+        <img className="mockframe-screen-image" src={src} alt={alt} />
+      </MockFrame>
     </div>
   );
 }
