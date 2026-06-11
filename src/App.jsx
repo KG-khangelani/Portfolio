@@ -38,6 +38,19 @@ const iconMap = {
   stack: Stack,
 };
 
+const projectById = new Map(projectCaseStudies.map((project) => [project.id, project]));
+const renderRevision = "mockup-fix-2026-06-11-browser-chrome";
+
+function getRecommendedProjects(active) {
+  const recommendedIds = active.projectIds?.length
+    ? active.projectIds
+    : projectCaseStudies.map((project) => project.id);
+
+  return recommendedIds
+    .map((projectId) => projectById.get(projectId))
+    .filter(Boolean);
+}
+
 function getInitialArchetypeId() {
   if (typeof window === "undefined") {
     return archetypes[0].id;
@@ -251,22 +264,127 @@ function LensNarrative({ active }) {
   );
 }
 
-function CaseStudies() {
-  const [selectedProjectId, setSelectedProjectId] = useState(projectCaseStudies[0].id);
+function PhoneMockup({ src, alt = "", featured = false }) {
+  return (
+    <div className={`phone-mockup ${featured ? "is-featured" : ""}`}>
+      <span className="phone-notch" aria-hidden="true" />
+      <span className="phone-speaker" aria-hidden="true" />
+      <img src={src} alt={alt} />
+    </div>
+  );
+}
+
+function BrowserMockup({ src, alt, url }) {
+  return (
+    <div className="browser-mockup">
+      <div className="browser-toolbar" aria-hidden="true">
+        <span className="browser-lights">
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className="browser-url">
+          <span className="browser-secure-dot" />
+          <span>{url}</span>
+        </span>
+        <span className="browser-actions">
+          <span />
+          <span />
+        </span>
+      </div>
+      <div className="browser-viewport">
+        <img src={src} alt={alt} />
+      </div>
+    </div>
+  );
+}
+
+function TabletMockup({ src, alt }) {
+  return (
+    <div className="tablet-pair">
+      <div className="tablet-mockup">
+        <span className="tablet-camera" aria-hidden="true" />
+        <img src={src} alt={alt} />
+      </div>
+    </div>
+  );
+}
+
+function CaseBoardMockup({ src, alt }) {
+  return (
+    <div className="case-board-mockup">
+      <img src={src} alt={alt} />
+    </div>
+  );
+}
+
+function ProjectMockup({ project }) {
+  if (project.id === "idiyprop") {
+    return <CaseBoardMockup src={project.image} alt={project.imageAlt} />;
+  }
+
+  if (project.mockup?.type === "phone-cluster") {
+    return (
+      <div className="phone-cluster-mockup">
+        {project.mockup.screens.map((screen, index) => (
+          <PhoneMockup
+            key={`${project.id}-${screen}`}
+            src={screen}
+            alt={index === 0 ? project.imageAlt : ""}
+            featured={index === 0}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (project.mockup?.type === "browser") {
+    return (
+      <BrowserMockup
+        src={project.image}
+        alt={project.imageAlt}
+        url={project.mockup.url}
+      />
+    );
+  }
+
+  if (project.mockup?.type === "tablet") {
+    return <TabletMockup src={project.image} alt={project.imageAlt} />;
+  }
+
+  if (project.mockup?.type === "case-board") {
+    return <CaseBoardMockup src={project.image} alt={project.imageAlt} />;
+  }
+
+  return <img src={project.image} alt={project.imageAlt} />;
+}
+
+function CaseStudies({ active }) {
+  const recommendedProjects = useMemo(() => getRecommendedProjects(active), [active]);
+  const [selectedProjectId, setSelectedProjectId] = useState(
+    recommendedProjects[0]?.id ?? projectCaseStudies[0].id,
+  );
+
+  useEffect(() => {
+    setSelectedProjectId(recommendedProjects[0]?.id ?? projectCaseStudies[0].id);
+  }, [active.id, recommendedProjects]);
+
   const selectedProject =
-    projectCaseStudies.find((project) => project.id === selectedProjectId) ??
+    recommendedProjects.find((project) => project.id === selectedProjectId) ??
+    recommendedProjects[0] ??
     projectCaseStudies[0];
+  const selectedFit = active.projectFit?.[selectedProject.id] ?? selectedProject.impact;
 
   return (
     <section className="case-studies" id="case-studies" aria-labelledby="case-studies-heading">
       <div className="section-heading">
         <div>
-          <p className="section-index">03 - Project Archive</p>
-          <h2 id="case-studies-heading">Product Case Studies</h2>
+          <p className="section-index">03 - {active.shortLabel} Project Proof</p>
+          <h2 id="case-studies-heading">Recommended Case Studies</h2>
         </div>
         <p>
-          Five product projects from the Figma portfolio archive, now incorporated
-          into the live website as reusable case-study content.
+          {active.projectRecommendation ??
+            "Project recommendations adapt to the selected archetype."}
         </p>
         <a
           href={selectedProject.sourceUrl}
@@ -281,15 +399,7 @@ function CaseStudies() {
       <div className="project-showcase">
         <article className="project-feature" key={selectedProject.id}>
           <div className="project-media" data-project={selectedProject.id}>
-            <img src={selectedProject.image} alt={selectedProject.imageAlt} />
-            {selectedProject.secondaryImage ? (
-              <img
-                className="project-secondary-image"
-                src={selectedProject.secondaryImage}
-                alt=""
-                aria-hidden="true"
-              />
-            ) : null}
+            <ProjectMockup project={selectedProject} />
           </div>
           <div className="project-feature-copy">
             <div className="project-kicker">
@@ -312,7 +422,10 @@ function CaseStudies() {
                 <dd>{selectedProject.organization}</dd>
               </div>
             </dl>
-            <p>{selectedProject.impact}</p>
+            <div className="project-fit-note">
+              <span>Why this fits {active.label}</span>
+              <p>{selectedFit}</p>
+            </div>
             <ul className="project-tags" aria-label={`${selectedProject.title} tags`}>
               {selectedProject.tags.map((tag) => (
                 <li key={`${selectedProject.id}-${tag}`}>{tag}</li>
@@ -321,8 +434,12 @@ function CaseStudies() {
           </div>
         </article>
 
-        <div className="project-index" role="list" aria-label="Select a project case study">
-          {projectCaseStudies.map((project) => {
+        <div
+          className="project-index"
+          role="list"
+          aria-label={`Select a project recommended for ${active.label}`}
+        >
+          {recommendedProjects.map((project) => {
             const selected = project.id === selectedProject.id;
 
             return (
@@ -335,14 +452,14 @@ function CaseStudies() {
               >
                 <span>{project.number}</span>
                 <strong>{project.title}</strong>
-                <small>{project.status}</small>
+                <small>{active.projectFit?.[project.id] ?? project.status}</small>
               </button>
             );
           })}
         </div>
       </div>
 
-      <div className="project-mini-grid" aria-label="Project overview cards">
+      <div className="project-mini-grid" aria-label="Full project archive">
         {projectCaseStudies.map((project) => (
           <article className="project-mini-card" key={`${project.id}-mini`}>
             <img src={project.image} alt="" aria-hidden="true" />
@@ -526,12 +643,12 @@ export default function App() {
     <>
       <TopBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-      <div className="page-shell">
+      <div className="page-shell" data-render-revision={renderRevision}>
         <TableOfContents activeId={activeId} />
         <main className="content-shell">
           <Hero active={active} activeId={activeId} onSelect={handleSelectArchetype} />
-          <CaseStudies />
           <LensNarrative active={active} />
+          <CaseStudies active={active} />
           <EvidenceTimeline active={active} />
           <SkillsSection active={active} />
           <ContactSection active={active} />

@@ -37,7 +37,7 @@ export const tableOfContents = [
     id: "case-studies",
     number: "03",
     label: "Case Studies",
-    items: ["Project Atlas", "Detailed Studies"],
+    items: ["Recommended Projects", "Full Archive"],
   },
   {
     id: "evidence",
@@ -63,6 +63,9 @@ export const projectCaseStudies = [
     role: "Product design and prototyping",
     organization: "Personal development project",
     image: "/projects/idiyprop-overview.webp",
+    mockup: {
+      type: "case-board",
+    },
     imageAlt:
       "Idiyprop case-study frame showing rental-management mobile screens and project notes.",
     summary:
@@ -82,6 +85,15 @@ export const projectCaseStudies = [
     role: "UX/UI Design",
     organization: "Forcelink",
     image: "/projects/forcelink-mobile-home.webp",
+    mockup: {
+      type: "phone-cluster",
+      screens: [
+        "/projects/forcelink-mobile-home.webp",
+        "/projects/forcelink-mobile-workorder.webp",
+        "/projects/forcelink-mobile-assets.webp",
+        "/projects/forcelink-mobile-tree.webp",
+      ],
+    },
     imageAlt: "Forcelink mobile home screen with field-service modules.",
     summary:
       "A field-service management mobile experience used to support configurable workflows across multiple industries.",
@@ -100,6 +112,10 @@ export const projectCaseStudies = [
     role: "Lead UX/UI Designer, Junior Developer",
     organization: "www.forcelink.net",
     image: "/projects/forcelink-web-board.webp",
+    mockup: {
+      type: "browser",
+      url: "forcelink.net/workorder",
+    },
     imageAlt: "Forcelink web application screen displayed inside a browser frame.",
     summary:
       "A web platform for configurable field-service operations, work orders, resources, assets, and operational reporting.",
@@ -118,6 +134,10 @@ export const projectCaseStudies = [
     role: "SEO and conversion contribution",
     organization: "www.mysmart.city",
     image: "/projects/mysmartcity-home.webp",
+    mockup: {
+      type: "browser",
+      url: "mysmart.city",
+    },
     imageAlt: "MySmartCity landing page with city service reporting and booking actions.",
     summary:
       "SEO optimization and user-conversion work for a citizen platform connecting residents with city services.",
@@ -136,7 +156,9 @@ export const projectCaseStudies = [
     role: "UX/UI Design",
     organization: "www.perfectprecision.co.za",
     image: "/projects/planter-main.webp",
-    secondaryImage: "/projects/planter-phone.webp",
+    mockup: {
+      type: "tablet",
+    },
     imageAlt:
       "Planter App tablet interface showing skips, population, seed count, target population, alerts, and row mapping.",
     summary:
@@ -224,6 +246,17 @@ export const archetypes = [
     tools: ["React", "Design systems", "Documentation", "AI-assisted workflows"],
     contact:
       "Use this lens when you need someone who can learn quickly, connect domains, and make messy problems easier to act on.",
+    projectIds: ["forcelink-web", "idiyprop", "mysmartcity"],
+    projectRecommendation:
+      "For this lens, lead with projects that show range: live product work, an end-to-end MVP, and growth/conversion contribution.",
+    projectFit: {
+      "forcelink-web":
+        "Best generalist proof: it combines product design, operational workflows, documentation, and junior development support on a live system.",
+      idiyprop:
+        "Shows the ability to take an ambiguous product opportunity and shape it into an MVP direction.",
+      mysmartcity:
+        "Adds a business and growth angle through SEO, conversion, and service-platform communication.",
+    },
     timeline: sharedTimeline,
   },
   {
@@ -272,6 +305,17 @@ export const archetypes = [
     tools: ["Search workflows", "Notes systems", "Spreadsheets", "Presentation artifacts"],
     contact:
       "Use this lens when the audience needs clear thinking, source-backed judgment, and research that leads to action.",
+    projectIds: ["mysmartcity", "idiyprop", "planter-app"],
+    projectRecommendation:
+      "For this lens, lead with projects where understanding users, conversion, and workflow friction matter most.",
+    projectFit: {
+      mysmartcity:
+        "Best researcher proof: it focuses on citizen-service messaging, SEO, and conversion behavior.",
+      idiyprop:
+        "Useful for showing how homeowner and tenant workflows were framed into a product concept.",
+      "planter-app":
+        "Shows investigation of a specialized operational workflow before turning it into a clearer interface.",
+    },
     timeline: sharedTimeline,
   },
   {
@@ -320,6 +364,17 @@ export const archetypes = [
     tools: ["Vite", "Git", "Playwright", "API documentation"],
     contact:
       "Use this lens when the audience needs a builder who can explain technical decisions and produce working artifacts.",
+    projectIds: ["forcelink-web", "planter-app", "forcelink-mobile"],
+    projectRecommendation:
+      "For this lens, lead with shipped or implementation-adjacent work: live web UI, dense operational interfaces, and structured mobile flows.",
+    projectFit: {
+      "forcelink-web":
+        "Best engineer proof: it is a live enterprise web product where design decisions had to survive implementation constraints.",
+      "planter-app":
+        "Shows data-heavy UI thinking, state clarity, and operational control surfaces.",
+      "forcelink-mobile":
+        "Shows modular app structure for work orders, assets, service calls, resources, and field operations.",
+    },
     timeline: sharedTimeline,
   },
   {
@@ -368,6 +423,17 @@ export const archetypes = [
     tools: ["Figma", "Prototyping", "Design tokens", "Accessibility checks"],
     contact:
       "Use this lens when the audience needs design thinking, clean communication, and prototypes that make product choices visible.",
+    projectIds: ["planter-app", "forcelink-mobile", "idiyprop"],
+    projectRecommendation:
+      "For this lens, lead with interface complexity, mobile information architecture, and early product prototyping.",
+    projectFit: {
+      "planter-app":
+        "Best designer proof: it turns a complex, metric-heavy agricultural workflow into a readable tablet interface.",
+      "forcelink-mobile":
+        "Shows mobile IA, module hierarchy, and field-service task design.",
+      idiyprop:
+        "Shows early-stage product design and rental workflow prototyping.",
+    },
     timeline: sharedTimeline,
   },
   {
@@ -416,6 +482,17 @@ export const archetypes = [
     tools: ["Diagrams", "Spreadsheets", "Technical specs", "Process notes"],
     contact:
       "Use this lens when the audience needs structure around complex systems, dependencies, and decisions.",
+    projectIds: ["forcelink-web", "forcelink-mobile", "planter-app"],
+    projectRecommendation:
+      "For this lens, lead with projects that expose operational systems, dependencies, and field workflows.",
+    projectFit: {
+      "forcelink-web":
+        "Best systems proof: it covers work orders, resources, assets, reporting, and configurable operational workflows.",
+      "forcelink-mobile":
+        "Shows how mobile modules connect field users to assets, support calls, resources, and work orders.",
+      "planter-app":
+        "Shows a controlled operational system with metrics, alerts, pin history, and field-state feedback.",
+    },
     timeline: sharedTimeline,
   },
 ];
